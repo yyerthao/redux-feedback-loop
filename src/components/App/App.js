@@ -6,6 +6,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import ThankYou from '../ThankYou/ThankYou';
+import Review from '../Review/Review';
 
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route} from 'react-router-dom'; 
@@ -48,6 +49,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Feed the feed!</h1>
           <h4><i>Seriously, give us feedback...</i></h4>
+          <h4><i>Help us help you!</i></h4>
         </header>
         <div className="inner-div">
         <br></br>
@@ -64,6 +66,7 @@ class App extends Component {
           <Route exact path="/support" component={Support}></Route>
           <Route exact path="/comments" component={Comments}></Route>
           <Route exact path="/thankyou" component={ThankYou}></Route>
+          <Route exact path="/review" component={Review}></Route>
         </Router>
         </div>
       </div>

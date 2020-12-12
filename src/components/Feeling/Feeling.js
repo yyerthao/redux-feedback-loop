@@ -5,8 +5,7 @@ import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-
-import '../App/App.css';
+import '../Feeling/Feeling.css';
 
 const styles = theme => ({
     button: {
@@ -58,15 +57,12 @@ class Form extends Component{
                 tell us how you're feeling.</i></p>
             <form>
                 <TextField 
-                    id="standard-feelings"
-                    abel="feelings*"
                     required
-                    min="1"
-                    max="10"
-                    className="inputForms"
+                    min = "1"
+                    max = "10"
                     type="number" 
                     placeholder="Insert rating here"
-                    value={this.feedback} 
+                    value={this.feels} 
                     onChange={this.handleChange}>
                 </TextField>
                     &nbsp;

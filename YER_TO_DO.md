@@ -32,6 +32,7 @@ App will save the feedback in the database
 ### Pages: 
 [x] Feels
 	[x] input forms
+	[ ] input validation
 	[x] button 
 	[x] handle submit
 	[x] handle change
@@ -41,6 +42,7 @@ App will save the feedback in the database
 	[ ] 
 [x] Understanding 
 	[x] input forms
+	[ ] input validation	
 	[x] button 
 	[x] handle submit
 	[x] handle change
@@ -50,6 +52,7 @@ App will save the feedback in the database
 
 [x] Support	
 	[x] input forms
+	[ ] input validation
 	[x] button 
 	[x] handle submit
 	[x] handle change

@@ -29,7 +29,7 @@ class Comments extends Component{
       event.preventDefault();
       console.log('Adding comments', this.state.comments);
       this.props.dispatch({type: 'COMMENTS', payload: this.state.comments})
-      this.props.history.push('/thankyou');
+      this.props.history.push('/review');
   }
 
   // handleChange function to handle event of input fields incoming change
@@ -43,10 +43,8 @@ class Comments extends Component{
         const classes = this.props;
         return(
             <>
-            <h1>Please provide any comments you have about today.</h1>
+            <h1>Please provide comments about today.</h1>
             <form>
-                {/* <textarea rows="5" cols="80" id="TITLE">
-                </textarea> */}
                 <br></br>
                 {/* added textarea instead of input in order to create a larger text box */}
                     <textarea 
@@ -55,11 +53,12 @@ class Comments extends Component{
                         id="TITLE"
                         className="textboxid" 
                         type="text" 
-                        placeholder="Insert additional comments here"
+                        placeholder="Insert comments here"
                         value={this.comments} 
                         onChange={this.handleChange}>
                     </textarea>
                     &nbsp;
+                    <br></br>
                 <Button
                     onClick={(event) => this.handleSubmit(event)} 
                     variant="contained" 

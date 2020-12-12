@@ -3,6 +3,7 @@ input{
 }
 
 .textboxid{
+    margin-bottom: 1rem;
     background-color: rgba(255, 255, 255, 0.797);
 }
 

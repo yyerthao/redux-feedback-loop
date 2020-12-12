@@ -8,6 +8,8 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+
+
 // reducer to run everytime an action is dispatched
 const feedbackReducer = (state = [], action) => {
     if (action.type === 'FEELINGS') {
