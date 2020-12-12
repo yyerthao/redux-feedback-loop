@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 import './App.css';
-import Form from '../Form/Form';
+import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
@@ -58,7 +58,7 @@ class App extends Component {
           <Link to="/comments">Comments</Link> */}
           <br/>
           {/* setting / as first view for feedback to collect feelings */}
-          <Route exact path="/" component={Form}></Route>
+          <Route exact path="/" component={Feeling}></Route>
           <Route exact path="/understanding" component={Understanding}></Route>
           <Route exact path="/support" component={Support}></Route>
           <Route exact path="/comments" component={Comments}></Route>

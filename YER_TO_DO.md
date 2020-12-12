@@ -9,7 +9,7 @@ Submit button
 App will save the feedback in the database
 
 ### REQUIRED:
-[ ] Use Redux to store your data across views
+[x] Use Redux to store your data across views
 [ ] 
 [ ]
 [ ]

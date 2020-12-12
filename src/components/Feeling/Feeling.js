@@ -19,7 +19,7 @@ class Form extends Component{
   handleSubmit = (event) => {
       event.preventDefault();
       console.log('Adding feels', this.state.feels);
-      this.props.dispatch({type: 'FEEDBACK', payload: this.state.feels})
+      this.props.dispatch({type: 'FEELINGS', payload: this.state.feels})
       this.props.history.push('/understanding');
   }
 
