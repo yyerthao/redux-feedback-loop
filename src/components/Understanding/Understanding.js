@@ -11,7 +11,7 @@ class Understanding extends Component{
       event.preventDefault();
       console.log('Adding understanding', this.state.understanding);
       this.props.dispatch({type: 'UNDERSTANDING', payload: this.state.understanding})
-      this.props.history.push('/understanding');
+      this.props.history.push('/support');
   }
 
   // handleChange function to handle event of input fields incoming change

@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 import { connect } from 'react-redux';
+// import Understanding from '../Understanding/Understanding';
 
 
 class Form extends Component{
 
   // created state, feedback array is empty right now
   state = {
-      feedback: {
-          feels: '',
-          understanding: '',
-          support: '',
-          comments: ''
-      }
+      feedback: []
   }
 
 // handleSubmit function to handle user's input and send it to redux
   handleSubmit = (event) => {
       event.preventDefault();
-      console.log('Adding feels', this.state.feedback.feels);
-      this.props.dispatch({type: 'GET_FEEDBACK', payload: this.state.feedback.feels})
-      this.props.history.push('/');
+      console.log('Adding feels', this.state.feedback);
+      this.props.dispatch({type: 'GET_FEEDBACK', payload: this.state.feedback})
+      this.props.history.push('/understanding');
   }
 
   // handleChange function to handle event of input fields incoming change

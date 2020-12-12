@@ -48,17 +48,19 @@ class App extends Component {
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
         </header>
+        <br></br>
         <Router>
-          <Link to="/"></Link>
-          <Link to="/understanding"></Link>
-          <Link to="/support"></Link>
-          <Link to="/comments"></Link>
+          {/* Will remove visible links soon, leaving for testing purposes */}
+          <Link to="/">Home</Link>&nbsp;
+          <Link to="/understanding">Understanding</Link>&nbsp;
+          <Link to="/support">Support</Link>&nbsp;
+          <Link to="/comments">Comments</Link>
           <br/>
           {/* setting / as first view for feedback to collect feelings */}
           <Route exact path="/" component={Form}></Route>
-          <Route path="/understanding" component={Understanding}></Route>
-          <Route path="/support" component={Support}></Route>
-          <Route path="/comments" component={Comments}></Route>
+          <Route exact path="/understanding" component={Understanding}></Route>
+          <Route exact path="/support" component={Support}></Route>
+          <Route exact path="/comments" component={Comments}></Route>
         </Router>
       </div>
     );
