@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import './Comments.css';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const styles = theme => ({
+    button: {
+        margin: theme.spacing(),
+    },
+    input: {
+        display: 'none',
+    },
+});
 
 class Comments extends Component{
 
@@ -29,6 +40,7 @@ class Comments extends Component{
   }
 
     render(){
+        const classes = this.props;
         return(
             <>
             <h1>Please provide any comments you have about today.</h1>
@@ -36,12 +48,25 @@ class Comments extends Component{
                 {/* <textarea rows="5" cols="80" id="TITLE">
                 </textarea> */}
                 <br></br>
-                    <textarea rows="5" cols="80" id="TITLE"className="textboxid" type="text" placeholder="Insert emotion here"
+                {/* added textarea instead of input in order to create a larger text box */}
+                    <textarea 
+                        rows="5" 
+                        cols="80" 
+                        id="TITLE"
+                        className="textboxid" 
+                        type="text" 
+                        placeholder="Insert additional comments here"
                         value={this.comments} 
                         onChange={this.handleChange}>
                     </textarea>
                     &nbsp;
-                <button onClick={(event) => this.handleSubmit(event)}>NEXT</button>
+                <Button
+                    onClick={(event) => this.handleSubmit(event)} 
+                    variant="contained" 
+                    className={classes.button}>
+                        Next
+                </Button>
+                {/* <button onClick={(event) => this.handleSubmit(event)}>NEXT</button> */}
             </form>
             </>
         )
@@ -49,4 +74,4 @@ class Comments extends Component{
 }
 
 const putStateOnProps = (reduxState) => ({reduxState});
-export default connect(putStateOnProps)(Comments);
+export default connect(putStateOnProps)(withStyles(styles)(Comments));

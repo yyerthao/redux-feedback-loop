@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const styles = theme => ({
+    button: {
+        margin: theme.spacing(),
+    },
+    input: {
+        display: 'none',
+    },
+});
+
 
 class Understanding extends Component{
 
@@ -28,17 +40,29 @@ class Understanding extends Component{
   }
 
     render(){
+        const classes = this.props;
         return(
             <>
             <h1>How well did you understand today's material?</h1>
             <p><i>On a scale of 1-10, 1 being not good and 10 being great.</i></p>
             <form>
-                <input type="number" placeholder="Insert emotion here"
+                <input 
+                    required
+                    min = "1"
+                    max = "10"
+                    type="number" 
+                    placeholder="Insert rating here"
                     value={this.understanding} 
                     onChange={this.handleChange}>
                 </input>
                     &nbsp;
-                <button onClick={(event) => this.handleSubmit(event)}>NEXT</button>
+                <Button
+                    onClick={(event) => this.handleSubmit(event)} 
+                    variant="contained" 
+                    className={classes.button}>
+                        Next
+                </Button>
+                {/* <button onClick={(event) => this.handleSubmit(event)}>NEXT</button> */}
             </form>
             </>
         )
@@ -46,4 +70,4 @@ class Understanding extends Component{
 }
 
 const putStateOnProps = (reduxState) => ({reduxState});
-export default connect(putStateOnProps)(Understanding);
+export default connect(putStateOnProps)(withStyles(styles)(Understanding));

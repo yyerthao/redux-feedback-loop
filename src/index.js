@@ -11,6 +11,8 @@ import logger from 'redux-logger';
 // reducer to run everytime an action is dispatched
 const feedbackReducer = (state = [], action) => {
     if (action.type === 'FEELINGS') {
+    // mutating state directionl, must return a new object containing state
+    // and any new property want to add
         return [...state, action.payload];
     } else if (action.type === 'UNDERSTANDING') {
         return action.payload;
