@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 
 const styles = theme => ({
     button: {
@@ -9,6 +11,11 @@ const styles = theme => ({
     },
     input: {
         display: 'none',
+    },
+        textField: {
+        marginLeft: theme.spacing(),
+        marginRight: theme.spacing(),
+        width: 200,
     },
 });
 
@@ -46,7 +53,7 @@ class Support extends Component{
             <h1>How goes the support today?</h1>
             <p><i>On a scale of 1-10, 1 being not good and 10 being great.</i></p>
             <form>
-                <input 
+                <TextField 
                     required
                     min = "1"
                     max = "10"
@@ -54,7 +61,7 @@ class Support extends Component{
                     placeholder="Insert rating here"
                     value={this.support} 
                     onChange={this.handleChange}>
-                </input>
+                </TextField>
                     &nbsp;
                  <Button
                     onClick={(event) => this.handleSubmit(event)} 

@@ -49,13 +49,14 @@ class App extends Component {
           <h1 className="App-title">Feed the feed!</h1>
           <h4><i>Seriously, give us feedback...</i></h4>
         </header>
+        <div className="inner-div">
         <br></br>
         <Router>
           {/* Will remove visible links soon, leaving for testing purposes */}
           {/* <Link to="/">Home</Link>&nbsp;
           <Link to="/understanding">Understanding</Link>&nbsp;
           <Link to="/support">Support</Link>&nbsp;
-          <Link to="/comments">Comments</Link> */}
+        <Link to="/comments">Comments</Link> */}
           <br/>
           {/* setting / as first view for feedback to collect feelings */}
           <Route exact path="/" component={Feeling}></Route>
@@ -64,6 +65,7 @@ class App extends Component {
           <Route exact path="/comments" component={Comments}></Route>
           <Route exact path="/thankyou" component={ThankYou}></Route>
         </Router>
+        </div>
       </div>
     );
   }

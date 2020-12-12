@@ -36,8 +36,9 @@ App will save the feedback in the database
 	[x] handle submit
 	[x] handle change
 	[x] this.props.history.push to next view
-	[ ] this.props.dispatch to redux
-    [ ] set min to 0 and max to 10
+	[x] this.props.dispatch to redux
+    [x] set min to 0 and max to 10
+	[ ] 
 [x] Understanding 
 	[x] input forms
 	[x] button 
@@ -45,7 +46,7 @@ App will save the feedback in the database
 	[x] handle change
 	[x] this.props.history.push to next view
 	[ ] this.props.dispatch to redux
-    [ ] set min to 0 and max to 10
+    [x] set min to 0 and max to 10
 
 [x] Support	
 	[x] input forms
@@ -54,7 +55,7 @@ App will save the feedback in the database
 	[x] handle change
 	[x] this.props.history.push to next view
 	[ ] this.props.dispatch to redux
-    [ ] set min to 0 and max to 10
+    [x] set min to 0 and max to 10
 
 [x] Comment
 	[x] input forms
@@ -62,17 +63,20 @@ App will save the feedback in the database
 	[x] handle submit
 	[x] handle change
 	[x] this.props.history.push to next view
-	[ ] this.props.dispatch to redux
+	[x] this.props.dispatch to redux
 [x] Thank you
-	[ ] button 
-	[ ] this.props.history.push to next view
-	[ ] this.props.dispatch to redux to return []
+	[x] button 
+	[x] this.props.history.push to view: feelings
+	[x] this.props.dispatch to redux to return []
 [ ] Admin 
     [ ]
     [ ]
     [ ]
     [ ]
-    [ ]
-    [ ]
-    [ ]
+
     
+
+STRETCH:
+	[ ] material ui styling to buttons
+	[ ] material ui styling for text field
+	[ ] 

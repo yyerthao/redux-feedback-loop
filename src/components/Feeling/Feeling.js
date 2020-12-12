@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 import { connect } from 'react-redux';
-// import Understanding from '../Understanding/Understanding';
+// Material-ui
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
+import '../App/App.css';
 
 const styles = theme => ({
     button: {
@@ -12,6 +15,11 @@ const styles = theme => ({
     input: {
         display: 'none',
     },
+    textField: {
+        marginLeft: theme.spacing(),
+        marginRight: theme.spacing(),
+        width: 200,
+  },
 });
 
 
@@ -45,10 +53,13 @@ class Form extends Component{
           const classes = this.props;
         return(
             <>
-            <h1>How goes the feedback today?</h1>
-            <p><i>On a scale of 1 through 10, 1 being not good and 10 being great.</i></p>
+            <h1>How goes the feels today?</h1>
+            <p><i>On a scale of 1 through 10, 1 being not good and 10 being great,
+                tell us how you're feeling.</i></p>
             <form>
-                <input 
+                <TextField 
+                    id="standard-feelings"
+                    abel="feelings*"
                     required
                     min="1"
                     max="10"
@@ -57,7 +68,7 @@ class Form extends Component{
                     placeholder="Insert rating here"
                     value={this.feedback} 
                     onChange={this.handleChange}>
-                </input>
+                </TextField>
                     &nbsp;
                  <Button
                     onClick={(event) => this.handleSubmit(event)} 

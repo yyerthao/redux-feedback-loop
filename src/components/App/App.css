@@ -1,6 +1,11 @@
+html{
+    background-color: rgb(217, 233, 233);
+}
+
 .App {
   text-align: center;
   font-family: 'Architects Daughter', cursive;
+  background-color: rgb(217, 233, 233);
 }
 
 .App-header {
@@ -27,3 +32,9 @@ h1{
   margin: 0;
   padding-top: 1rem;
 }
+
+.inner-div{
+    margin-right: 10rem;
+    margin-left: 10rem;
+}
+

@@ -15,11 +15,11 @@ const feedbackReducer = (state = [], action) => {
     // and any new property want to add
         return [...state, action.payload];
     } else if (action.type === 'UNDERSTANDING') {
-        return action.payload;
+        return [...state, action.payload];
     } else if (action.type === 'SUPPORT') {
-        return action.payload;
+        return [...state, action.payload];
     } else if (action.type === 'COMMENTS'){
-        return action.payload;
+        return [...state, action.payload];
     } else if (action.type === 'NEW_FEEDBACK') {
         return [];
     }
