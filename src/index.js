@@ -13,7 +13,7 @@ const feedbackReducer = (state = [], action) => {
     if (action.type === 'GET_FEEDBACK') {
         return action.payload;
     } else if (action.type === 'UNDERSTANDING') {
-        return [];
+        return action.payload;
     }
     return state;
 }

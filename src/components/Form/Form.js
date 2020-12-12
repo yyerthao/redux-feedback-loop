@@ -5,33 +5,39 @@ import { connect } from 'react-redux';
 
 class Form extends Component{
 
-  // created state, feels array is empty right now
+  // created state, feedback array is empty right now
   state = {
-      feels: []
+      feedback: {
+          feels: '',
+          understanding: '',
+          support: '',
+          comments: ''
+      }
   }
 
+// handleSubmit function to handle user's input and send it to redux
   handleSubmit = (event) => {
       event.preventDefault();
-      console.log('Adding feels', this.state.feels);
-      this.props.dispatch({type: 'GET_FEEDBACK', payload: this.state.feels})
-      this.props.history.push('/understanding');
+      console.log('Adding feels', this.state.feedback.feels);
+      this.props.dispatch({type: 'GET_FEEDBACK', payload: this.state.feedback.feels})
+      this.props.history.push('/');
   }
 
+  // handleChange function to handle event of input fields incoming change
   handleChange = (event) => {
       this.setState({
-          feels: event.target.value
+          feedback: event.target.value
       })
   }
-
 
     render(){
         return(
             <>
-            <h1>How goes the feels today?</h1>
+            <h1>How goes the feedback today?</h1>
             <p><i>On a scale of 1-10, 1 being not good and 10 being great.</i></p>
             <form>
                 <input type="number" placeholder="Insert emotion here"
-                    value={this.feels} 
+                    value={this.feedback} 
                     onChange={this.handleChange}>
                 </input>
                     &nbsp;

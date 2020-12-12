@@ -3,8 +3,11 @@ import React, { Component } from 'react';
 import './App.css';
 import Form from '../Form/Form';
 import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
+import Comments from '../Comments/Comments';
+
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route } from 'react-router-dom'; 
+import { HashRouter as Router, Route, Link} from 'react-router-dom'; 
 
 class App extends Component {
 
@@ -46,12 +49,16 @@ class App extends Component {
           <h4><i>Don't forget it!</i></h4>
         </header>
         <Router>
+          <Link to="/"></Link>
+          <Link to="/understanding"></Link>
+          <Link to="/support"></Link>
+          <Link to="/comments"></Link>
           <br/>
           {/* setting / as first view for feedback to collect feelings */}
           <Route exact path="/" component={Form}></Route>
           <Route path="/understanding" component={Understanding}></Route>
-          {/* <Route path="/support" component={}></Route>
-          <Route path="/comments" component={}></Route> */}
+          <Route path="/support" component={Support}></Route>
+          <Route path="/comments" component={Comments}></Route>
         </Router>
       </div>
     );
