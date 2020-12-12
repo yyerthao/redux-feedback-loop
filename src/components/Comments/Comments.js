@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import './Comments.css';
 
 class Comments extends Component{
   state = {
@@ -9,9 +10,9 @@ class Comments extends Component{
 // handleSubmit function to handle user's input and send it to redux
   handleSubmit = (event) => {
       event.preventDefault();
-      console.log('Adding feels', this.state.comments);
-      this.props.dispatch({type: 'GET_FEEDBACK', payload: this.state.comments})
-      this.props.history.push('/understanding');
+      console.log('Adding comments', this.state.comments);
+      this.props.dispatch({type: 'COMMENTS', payload: this.state.comments})
+      this.props.history.push('/');
   }
 
   // handleChange function to handle event of input fields incoming change
@@ -24,13 +25,15 @@ class Comments extends Component{
     render(){
         return(
             <>
-            <h1>How goes the comments today?</h1>
-            <p><i>On a scale of 1-10, 1 being not good and 10 being great.</i></p>
+            <h1>Please provide any comments you have about today.</h1>
             <form>
-                <input type="number" placeholder="Insert emotion here"
-                    value={this.comments} 
-                    onChange={this.handleChange}>
-                </input>
+                {/* <textarea rows="5" cols="80" id="TITLE">
+                </textarea> */}
+                <br></br>
+                    <textarea rows="5" cols="80" id="TITLE"className="textboxid" type="text" placeholder="Insert emotion here"
+                        value={this.comments} 
+                        onChange={this.handleChange}>
+                    </textarea>
                     &nbsp;
                 <button onClick={(event) => this.handleSubmit(event)}>NEXT</button>
             </form>

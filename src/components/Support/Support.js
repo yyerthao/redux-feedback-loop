@@ -8,9 +8,9 @@ class Support extends Component{
 // handleSubmit function to handle user's input and send it to redux
   handleSubmit = (event) => {
       event.preventDefault();
-      console.log('Adding feels', this.state.support);
-      this.props.dispatch({type: 'GET_FEEDBACK', payload: this.state.support})
-      this.props.history.push('/understanding');
+      console.log('Adding support', this.state.support);
+      this.props.dispatch({type: 'SUPPORT', payload: this.state.support})
+      this.props.history.push('/comments');
   }
 
   // handleChange function to handle event of input fields incoming change

@@ -8,14 +8,18 @@ class Form extends Component{
 
   // created state, feedback array is empty right now
   state = {
-      feedback: []
+      feedback: {
+          feels: '', 
+          understanding: '', 
+          support: '', 
+          comments: ''}
   }
 
 // handleSubmit function to handle user's input and send it to redux
   handleSubmit = (event) => {
       event.preventDefault();
       console.log('Adding feels', this.state.feedback);
-      this.props.dispatch({type: 'GET_FEEDBACK', payload: this.state.feedback})
+      this.props.dispatch({type: 'FEEDBACK', payload: this.state.feedback})
       this.props.history.push('/understanding');
   }
 

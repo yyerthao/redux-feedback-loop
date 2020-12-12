@@ -7,7 +7,7 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link} from 'react-router-dom'; 
+import { HashRouter as Router, Route} from 'react-router-dom'; 
 
 class App extends Component {
 
@@ -51,10 +51,10 @@ class App extends Component {
         <br></br>
         <Router>
           {/* Will remove visible links soon, leaving for testing purposes */}
-          <Link to="/">Home</Link>&nbsp;
+          {/* <Link to="/">Home</Link>&nbsp;
           <Link to="/understanding">Understanding</Link>&nbsp;
           <Link to="/support">Support</Link>&nbsp;
-          <Link to="/comments">Comments</Link>
+          <Link to="/comments">Comments</Link> */}
           <br/>
           {/* setting / as first view for feedback to collect feelings */}
           <Route exact path="/" component={Form}></Route>
