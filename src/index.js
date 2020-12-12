@@ -18,6 +18,8 @@ const feedbackReducer = (state = [], action) => {
         return action.payload;
     } else if (action.type === 'COMMENTS'){
         return action.payload;
+    } else if (action.type === 'NEW_FEEDBACK') {
+        return [];
     }
     return state;
 }

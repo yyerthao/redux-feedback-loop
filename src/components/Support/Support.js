@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 class Support extends Component{
+
   state = {
-      support: []
+      feedback: {
+          feels: '',
+          understanding: '',
+          support: '',
+          comments: ''
+      }
   }
 
 // handleSubmit function to handle user's input and send it to redux

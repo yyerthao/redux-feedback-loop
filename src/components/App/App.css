@@ -1,16 +1,17 @@
 .App {
   text-align: center;
+  font-family: 'Architects Daughter', cursive;
 }
 
 .App-header {
-  background-color: #033076;
-  min-height: 70px;
-  padding: 20px;
+  background-color: #22a7a9cb;
+  min-height: 50px;
+  padding: 8px;
   color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 3rem;
 }
 
 .App-intro {

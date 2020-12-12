@@ -5,6 +5,7 @@ import Form from '../Form/Form';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
+import ThankYou from '../ThankYou/ThankYou';
 
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route} from 'react-router-dom'; 
@@ -45,8 +46,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
+          <h1 className="App-title">Feed the feed!</h1>
+          <h4><i>Seriously, give us feedback...</i></h4>
         </header>
         <br></br>
         <Router>
@@ -61,6 +62,7 @@ class App extends Component {
           <Route exact path="/understanding" component={Understanding}></Route>
           <Route exact path="/support" component={Support}></Route>
           <Route exact path="/comments" component={Comments}></Route>
+          <Route exact path="/thankyou" component={ThankYou}></Route>
         </Router>
       </div>
     );

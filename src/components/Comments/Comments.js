@@ -3,8 +3,14 @@ import { connect } from "react-redux";
 import './Comments.css';
 
 class Comments extends Component{
+
   state = {
-      comments: []
+      feedback: {
+          feels: '',
+          understanding: '',
+          support: '',
+          comments: ''
+      }
   }
 
 // handleSubmit function to handle user's input and send it to redux
@@ -12,7 +18,7 @@ class Comments extends Component{
       event.preventDefault();
       console.log('Adding comments', this.state.comments);
       this.props.dispatch({type: 'COMMENTS', payload: this.state.comments})
-      this.props.history.push('/');
+      this.props.history.push('/thankyou');
   }
 
   // handleChange function to handle event of input fields incoming change

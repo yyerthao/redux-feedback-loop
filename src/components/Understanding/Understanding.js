@@ -2,15 +2,21 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 class Understanding extends Component{
+
   state = {
-      understanding: []
+      feedback: {
+          feels: '',
+          understanding: '',
+          support: '',
+          comments: ''
+      }
   }
 
 // handleSubmit function to handle user's input and send it to redux
   handleSubmit = (event) => {
       event.preventDefault();
       console.log('Adding understanding', this.state.understanding);
-      this.props.dispatch({type: 'UNDERSTANDING', payload: this.state.understanding})
+      this.props.dispatch({type:'UNDERSTANDING', payload: this.state.understanding})
       this.props.history.push('/support');
   }
 
