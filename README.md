@@ -9,11 +9,13 @@
 
 _Duration: 30 Hours of Fun and Reflection
 
- Application which allows user to utilize when submitting feedback to staff. Upon opening application, user will find a welcome page and will then submit ratings and comments per view of the application. Feedback will become saved in database for staff to see.
+ Application which allows user to utilize when submitting feedback to staff. Upon opening application, user will find a welcome page with a message. User will then submit ratings and comments after following flow of application from page to page. Feedback will become saved in database for staff to see once user submits feedback on a Review page.
 
 ## Sample of feedback form
 Home of my application
 ![Feedback](home.png)
+Feelings view
+![Feedback](feels.png)
 Comment view
 ![Feedback](comment.png)
 Review view
@@ -46,8 +48,7 @@ Review view
 7. Review feedback, user has option to start over at this point
     or user may submit feedback 
 
-
-
+s
 ## Built With
 
 * HTML5
@@ -56,7 +57,6 @@ Review view
 * React
 * Redux
 * Material UI
-* React
 
 
 ## Acknowledgement

@@ -43,10 +43,9 @@ state = {
                 <br></br>
                 {/* added textarea instead of input in order to create a larger text box */}
                     <textarea 
-                        required
                         rows="5" 
                         cols="80" 
-                        id="TITLE"
+                        id="comment"
                         className="textboxid" 
                         type="text" 
                         placeholder="Insert comments here"

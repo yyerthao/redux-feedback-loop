@@ -110,6 +110,8 @@ handleSubmit = (event) => {
 }
 
 
+// left side is taco 
+// accessing each individual reducer 
 const putStateOnProps = (reduxState) => ({
     feelingsReducer: reduxState.feelingsReducer,
     understandReducer: reduxState.understandReducer,
