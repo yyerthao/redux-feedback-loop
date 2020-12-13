@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import './Comments.css';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import axios from 'axios';
 
 const styles = theme => ({
     button: {
@@ -15,20 +16,15 @@ const styles = theme => ({
 
 class Comments extends Component{
 
-  state = {
-      feedback: {
-          feels: '',
-          understanding: '',
-          support: '',
-          comments: ''
-      }
-  }
+state = {
+    comments: ''
+}
 
 // handleSubmit function to handle user's input and send it to redux
-  handleSubmit = (event) => {
+  returnHome = (event) => {
       event.preventDefault();
       console.log('Adding comments', this.state.comments);
-      this.props.dispatch({type: 'COMMENTS', payload: this.state.comments})
+      this.props.dispatch({type: 'COMMENTS', payload: this.state})
       this.props.history.push('/review');
   }
 
@@ -38,6 +34,45 @@ class Comments extends Component{
           comments: event.target.value
       })
   }
+
+componentDidMount(){
+    this.getFeed();
+}
+
+getFeed = () => {
+    axios({
+        method: 'GET',
+        url: '/feedback'
+    }).then((response) => {
+        console.log('back from GET:', response.data);
+        this.setState({
+            feedBack: response.data
+        })
+    }).catch((err) => {
+        console.log(err);
+        alert('problem with GET request');
+    }) // end axios
+} // end getFeed
+
+//      addFeed = (event) => {
+//         event.preventDefault();
+//         console.log('Adding feedback', this.state.feedback);
+//         console.log('Adding comments', this.state.comments);
+//         this.props.dispatch({type: 'COMMENTS', payload: this.state.comments})
+//         this.props.history.push('/review');
+//        axios.post('/feedback', {
+//                name: this.state.feedback
+//            })
+//            .then((response) => {
+//                console.log('back from POST', response.data);
+//                this.getFeed();
+//                this.setState({
+//                    feedback: '',
+//                })
+//            })
+
+//    }
+
 
     render(){
         const classes = this.props;
@@ -60,10 +95,18 @@ class Comments extends Component{
                     &nbsp;
                     <br></br>
                 <Button
-                    onClick={(event) => this.handleSubmit(event)} 
+                    onClick={(event) => this.returnHome(event)} 
                     variant="contained" 
                     className={classes.button}>
-                        Next
+                        Start Over
+                </Button>
+                &nbsp;
+                &nbsp;
+                <Button 
+                    onClick={(event) => this.returnHome(event)}
+                    variant="contained"
+                    className={classes.button}>
+                        Complete Feed Back
                 </Button>
                 {/* <button onClick={(event) => this.handleSubmit(event)}>NEXT</button> */}
             </form>

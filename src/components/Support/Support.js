@@ -22,20 +22,15 @@ const styles = theme => ({
 
 class Support extends Component{
 
-  state = {
-      feedback: {
-          feels: '',
-          understanding: '',
-          support: '',
-          comments: ''
-      }
-  }
+ state = {
+    support: 0
+ }
 
 // handleSubmit function to handle user's input and send it to redux
   handleSubmit = (event) => {
       event.preventDefault();
       console.log('Adding support', this.state.support);
-      this.props.dispatch({type: 'SUPPORT', payload: this.state.support})
+      this.props.dispatch({type: 'SUPPORT', payload: this.state})
       this.props.history.push('/comments');
   }
 

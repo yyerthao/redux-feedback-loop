@@ -15,15 +15,6 @@ const styles = theme => ({
 
 
 class ThankYou extends Component{
-
-  state = {
-      feedback: {
-          feels: '',
-          understanding: '',
-          support: '',
-          comments: ''
-      }
-  }
   
 returnHome = (event) => {
     this.props.dispatch({type: 'NEW_FEEDBACK'})

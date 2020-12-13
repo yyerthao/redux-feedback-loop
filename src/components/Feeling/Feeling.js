@@ -25,26 +25,22 @@ const styles = theme => ({
 class Form extends Component{
 
   // created state, feedback array is empty right now
-  state = {
-      feedback: {
-          feels: '', 
-          understanding: '', 
-          support: '', 
-          comments: ''}
-  }
+ state = {
+    feeling: 0
+ }
 
 // handleSubmit function to handle user's input and send it to redux
   handleSubmit = (event) => {
       event.preventDefault();
-      console.log('Adding feels', this.state.feels);
-      this.props.dispatch({type: 'FEELINGS', payload: this.state.feedback})
+      console.log('Adding feeling', this.state.feeling);
+      this.props.dispatch({type: 'ADD_FEELINGS', payload: this.state})
       this.props.history.push('/understanding');
   }
 
   // handleChange function to handle event of input fields incoming change
   handleChange = (event) => {
       this.setState({
-          feedback: event.target.value
+          feeling: event.target.value
       })
   }
 
@@ -52,7 +48,7 @@ class Form extends Component{
           const classes = this.props;
         return(
             <>
-            <h1>How goes the feels today?</h1>
+            <h1>How goes the feeling today?</h1>
             <p><i>On a scale of 1 through 10, 1 being not good and 10 being great,
                 tell us how you're feeling.</i></p>
             <form>
@@ -62,7 +58,7 @@ class Form extends Component{
                     max = "10"
                     type="number" 
                     placeholder="Insert rating here"
-                    value={this.feels} 
+                    value={this.feeling} 
                     onChange={this.handleChange}>
                 </TextField>
                     &nbsp;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 import './App.css';
+import Home from '../Home/Home';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
@@ -13,14 +14,6 @@ import { HashRouter as Router, Route} from 'react-router-dom';
 
 class App extends Component {
 
-
-  // componentDidMount fires up right away upon DOM loaded
-  // runs get function to run axios get call to server right away
-  // to ensure our array gets filled with necessary data
-  componentDidMount(){
-    console.log('---------- DOM READY TO GO ----------')
-    // this.refreshFeed();
-  }
   
   // refreshFeed = () => {
   //   // just like $.ajax()
@@ -61,7 +54,8 @@ class App extends Component {
         <Link to="/comments">Comments</Link> */}
           <br/>
           {/* setting / as first view for feedback to collect feelings */}
-          <Route exact path="/" component={Feeling}></Route>
+          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/feeling" component={Feeling}></Route>
           <Route exact path="/understanding" component={Understanding}></Route>
           <Route exact path="/support" component={Support}></Route>
           <Route exact path="/comments" component={Comments}></Route>

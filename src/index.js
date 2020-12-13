@@ -12,18 +12,18 @@ import logger from 'redux-logger';
 
 // reducer to run everytime an action is dispatched
 const feedbackReducer = (state = [], action) => {
-    if (action.type === 'FEELINGS') {
+    if (action.type === 'ADD_FEELINGS') {
     // mutating state directionl, must return a new object containing state
     // and any new property want to add
-        return [...state, action.payload];
+        return [...state,action.payload];
     } else if (action.type === 'UNDERSTANDING') {
-        return [...state, action.payload];
+        return [...state,action.payload];
     } else if (action.type === 'SUPPORT') {
-        return [...state, action.payload];
+        return [...state,action.payload];
     } else if (action.type === 'COMMENTS'){
-        return [...state, action.payload];
+        return [...state,action.payload];
     } else if (action.type === 'NEW_FEEDBACK') {
-        return [];
+        return {};
     }
     return state;
 }
