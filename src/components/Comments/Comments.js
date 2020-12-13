@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import './Comments.css';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-// import axios from 'axios';
 
 const styles = theme => ({
     button: {

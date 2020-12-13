@@ -3,7 +3,7 @@
 ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/yyerthao/redux-feedback-loop.svg?style=flat-square)
 ![FORKS](https://img.shields.io/github/forks/yyerthao/redux-feedback-loop.svg?style=social)
 
-# Redux Feedback Loop
+## Redux Feedback Loop
 
 ## Description
 
@@ -11,11 +11,13 @@ _Duration: 30 Hours of Fun and Reflection
 
  Application which allows user to utilize when submitting feedback to staff. Upon opening application, user will find a welcome page and will then submit ratings and comments per view of the application. Feedback will become saved in database for staff to see.
 
-
 ## Sample of feedback form
-
-![Feedback](feeling.png)
-
+Home of my application
+![Feedback](home.png)
+Comment view
+![Feedback](comment.png)
+Review view
+![Feedback](review.png)
 
 ### Prerequisites
 

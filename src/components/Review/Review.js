@@ -43,6 +43,8 @@ thankYou = (event) => {
 
 }
 
+// brings user back to home page to add new feedback
+// will dispatch to reducer NEW_FEEDBACK to clear saved array info
 restartFeedback = (event) => {
     this.props.dispatch({type: 'NEW_FEEDBACK'})
     this.props.history.push('/');
@@ -50,7 +52,7 @@ restartFeedback = (event) => {
 
 handleSubmit = (event) => {
   event.preventDefault();
-  // TODO - axios request to server to add book
+  // TODO - axios request to server to add feedback
     axios.post('/feedback', this.state.collectedFeedback)
     .then((response) => {
         console.log(' ---------------- POST WORKING', response)

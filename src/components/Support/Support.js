@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-// import TextField from '@material-ui/core/TextField';
 
 
 const styles = theme => ({
@@ -49,15 +48,6 @@ class Support extends Component{
             <h1>Did you feel supported today?</h1>
             <p><i>On a scale of 1 to 5, 1 being not good and 5 being great.</i></p>
             <form onSubmit={this.handleSubmit}>
-                {/* <TextField 
-                    required
-                    min = "1"
-                    max = "10"
-                    type="number" 
-                    placeholder="Insert rating here"
-                    value={this.support} 
-                    onChange={this.handleChange}>
-                </TextField> */}
                 <input type="radio" id="1" name="selection" value="1"
                     checked={this.state.support === "1"}
                     onChange={this.handleChange}
