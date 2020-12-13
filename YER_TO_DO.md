@@ -10,10 +10,11 @@ App will save the feedback in the database
 
 ### REQUIRED:
 [x] Use Redux to store your data across views
+[ ] input validation
+	[ ] add alert box if no input was inputted?
+[ ] post all feedback results on view Results
+[x] clear feedback upon Thank You page button: Add New Feedback
 [ ] 
-[ ]
-[ ]
-[ ]
 [ ]
 
 ### Set Up:
@@ -29,7 +30,7 @@ App will save the feedback in the database
 	[x] create table feedback
 	[x] insert values with sample value
 
-### Pages: 
+### Views: 
 [x] Feels
 	[x] input forms
 	[ ] input validation
@@ -39,7 +40,7 @@ App will save the feedback in the database
 	[x] this.props.history.push to next view
 	[x] this.props.dispatch to redux
     [x] set min to 0 and max to 10
-	[ ] 
+ 
 [x] Understanding 
 	[x] input forms
 	[ ] input validation	
@@ -47,7 +48,7 @@ App will save the feedback in the database
 	[x] handle submit
 	[x] handle change
 	[x] this.props.history.push to next view
-	[ ] this.props.dispatch to redux
+	[x] this.props.dispatch to redux
     [x] set min to 0 and max to 10
 
 [x] Support	
@@ -57,7 +58,7 @@ App will save the feedback in the database
 	[x] handle submit
 	[x] handle change
 	[x] this.props.history.push to next view
-	[ ] this.props.dispatch to redux
+	[x] this.props.dispatch to redux
     [x] set min to 0 and max to 10
 
 [x] Comment
@@ -67,19 +68,24 @@ App will save the feedback in the database
 	[x] handle change
 	[x] this.props.history.push to next view
 	[x] this.props.dispatch to redux
+
+[ ] Review
+	[ ] display user's answers on DOM
+		[ ] axios post 
+		[ ] table? or p tags
+	[ ] button, upon clicking will submit to database
+		[ ] post to database
+		[ ] will push to thank you page
 [x] Thank you
 	[x] button 
-	[x] this.props.history.push to view: feelings
-	[x] this.props.dispatch to redux to return []
-[ ] Admin 
-    [ ]
-    [ ]
-    [ ]
-    [ ]
+	[x] this.props.history.push to view: homepage
+	[x] this.props.dispatch to redux to return [] to clear 
+
+### STYLING: 
+
 
     
-
-STRETCH:
-	[ ] material ui styling to buttons
-	[ ] material ui styling for text field
+### STRETCH:
+	[x] material ui styling to buttons
+	[x] material ui styling for text field
 	[ ] 

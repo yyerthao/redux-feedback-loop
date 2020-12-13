@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import './Review.css';
-import axios from 'axios';
+// import axios from 'axios';
 
 const styles = theme => ({
     button: {
@@ -29,23 +29,23 @@ thankYou = (event) => {
 
 }
 
-  handleOnClick = () => {
-      console.log('ReduxState object: ', this.props.reduxState);
-      axios({
-              method: 'POST',
-              url: '/feedback',
-              data: this.props.reduxState,
-          })
-          .then((response) => {
-              console.log('response', response);
-              console.log('response.data', response.data);
-              this.props.history.push('/thankyou');
-          })
-          .catch((err) => {
-              console.error(err);
-          });
-  };
-
+// handleSubmit = (event) => {
+//     event.preventDefault();
+//     console.log(`Adding book`, this.state.newBook);
+//     // TODO - axios request to server to add book
+//     axios.post('/feedback', this.state.newBook).then((response) => {
+//         console.log('back from POST:', response.data);
+//         this.setState = {
+//             newBook: {
+//                 title: '',
+//                 author: ''
+//             }
+//         }
+//         this.props.getBooks();
+//     }).catch((err) => {
+//         console.log(err);
+//     }) // end axios
+// } // end handleSubmit
 
     render(){
         const classes = this.props;
@@ -56,18 +56,24 @@ thankYou = (event) => {
 
                  <Button
                     onClick={(event) => this.thankYou(event)} 
-                    variant="contained" 
-                    className={classes.button}>
+                     variant="contained" 
+                     className={classes.button}>
                         Next
                 </Button>
+                <br></br>
             </div>
             </>
         )
-    }
+    }  
 }
 
 
-const putStateOnProps = (reduxState) => ({reduxState});
+const putStateOnProps = (reduxState) => ({
+    feelingsReducer: reduxState.feelingsReducer,
+    understandReducer: reduxState.understandReducer,
+    supportReducer: reduxState.supportReducer,
+    commentsReducer: reduxState.commentsReducer,
+});
 
 export default connect(putStateOnProps)(withStyles(styles)(Review));
 

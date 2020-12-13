@@ -35,45 +35,7 @@ state = {
       })
   }
 
-  
 
-// componentDidMount(){
-//     this.getFeed();
-// }
-
-// getFeed = () => {
-//     axios({
-//         method: 'GET',
-//         url: '/feedback'
-//     }).then((response) => {
-//         console.log('back from GET:', response.data);
-//         this.setState({
-//             feedBack: response.data
-//         })
-//     }).catch((err) => {
-//         console.log(err);
-//         alert('problem with GET request');
-//     }) // end axios
-// } // end getFeed
-
-//      addFeed = (event) => {
-//         event.preventDefault();
-//         console.log('Adding feedback', this.state.feedback);
-//         console.log('Adding comments', this.state.comments);
-//         this.props.dispatch({type: 'COMMENTS', payload: this.state.comments})
-//         this.props.history.push('/review');
-//        axios.post('/feedback', {
-//                name: this.state.feedback
-//            })
-//            .then((response) => {
-//                console.log('back from POST', response.data);
-//                this.getFeed();
-//                this.setState({
-//                    feedback: '',
-//                })
-//            })
-
-//    }
 
 
     render(){
