@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
-// import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 import './Review.css';
 import axios from 'axios';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 
 const styles = theme => ({
     button: {
@@ -52,23 +57,35 @@ handleSubmit = (event) => {
 } // end handleSubmit 
 
     render(){
-        const {feelingsReducer, understandReducer, supportReducer, commentsReducer} =this.props;
-        // const classes = this.props;
+        const { classes, feelingsReducer, understandReducer, supportReducer, commentsReducer} =this.props;
         return(
             <>
             <div>
                 <h1>Review Your Feedback</h1>
-
-                <p>Feeling: {feelingsReducer.feeling}</p>
-                <p>Understanding: {understandReducer.understanding}</p>
-                <p>Support: {supportReducer.support}</p>
-                <p>Comments: {commentsReducer.comments}</p>
-                 <button
-                    onClick={(event) => this.handleSubmit(event)}>
-                    {/* //  variant="contained" 
-                    //  className={classes.button} */}
-                        Next
-                </button>
+                <Table className="mui-table">
+                <TableHead>
+                    <TableRow>
+                        <TableCell>Feeling</TableCell>
+                        <TableCell>Understanding</TableCell>
+                        <TableCell>Support</TableCell>
+                        <TableCell>Comments</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    <TableRow>
+                        <TableCell>{feelingsReducer.feeling}</TableCell>
+                        <TableCell>{understandReducer.understanding}</TableCell>
+                        <TableCell>{supportReducer.support}</TableCell>
+                        <TableCell>{commentsReducer.comments}</TableCell>
+                    </TableRow>
+                </TableBody>
+                </Table>
+                 <Button
+                    onClick={(event) => this.handleSubmit(event)}
+                    variant="contained" 
+                    className={classes.button}>
+                        Submit Review
+                </Button>
                 <br></br>
             </div>
             </>
@@ -86,17 +103,3 @@ const putStateOnProps = (reduxState) => ({
 
 export default connect(putStateOnProps)(withStyles(styles)(Review));
 
-
-
-/* {this.state.reduxState.feedBackReducer.map((feed, i) => {
-    return (
-     //    getting product passed through ProductListItem
-     //    product is a regular prop, not using redux directly
-     <ul>
-        <li key={i}>{this.props.feed.feels}</li>
-        <li key={i}>{this.props.feed.understanding}</li>
-        <li key={i}>{this.props.feed.support}</li>
-        <li key={i}>{this.props.feed.comments}</li>
-     </ul>
-    );
-})}  */

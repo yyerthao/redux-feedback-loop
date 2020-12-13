@@ -1,16 +1,16 @@
 html{
-    background-color: rgb(232, 235, 235);
+  background-color: rgb(223, 228, 228);
 }
 
 .App {
   text-align: center;
   font-family: 'Architects Daughter', cursive;
-    background-color: rgb(232, 235, 235);
-  color: rgba(91, 87, 87, 0.845);
+  background-color: rgb(223, 228, 228);
+  color: rgba(67, 60, 60, 0.845);
 }
 
 .App-header {
-  background-color: #297d7ecb;
+  background-color: #3ba9abcb;
   min-height: 50px;
   padding: 8px;
   color: white;

@@ -10,7 +10,7 @@ import ThankYou from '../ThankYou/ThankYou';
 import Review from '../Review/Review';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link} from 'react-router-dom'; 
+import { HashRouter as Router, Route} from 'react-router-dom'; 
 
 class App extends Component {
 
@@ -79,11 +79,11 @@ postFeed = () => {
         <br></br>
         <Router>
           {/* Will remove visible links soon, leaving for testing purposes */}
-          <Link to="/" replace>Home</Link>&nbsp;&nbsp;&nbsp;
+          {/* <Link to="/" replace>Home</Link>&nbsp;&nbsp;&nbsp;
           <Link to="/understanding">Understanding</Link>&nbsp;&nbsp;&nbsp;
           <Link to="/support">Support</Link>&nbsp;&nbsp;&nbsp;
           <Link to="/comments">Comments</Link>
-          <br/>
+          <br/> */}
           {/* setting / as first view for feedback to collect feelings */}
           <Route exact path="/" component={Home} ></Route>
           <Route exact path="/feeling" component={Feeling}></Route>

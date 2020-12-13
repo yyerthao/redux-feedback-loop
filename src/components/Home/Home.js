@@ -25,13 +25,13 @@ startFeedBack = (event) => {
         return(
             <div>
                 <h1>It's your turn to feed the feedbackers</h1>
-                <footer><i>"Delivering and receiving feedback is a skill" - gapingvoid</i></footer>
                     <Button
                         onClick={(event) => this.startFeedBack(event)} 
                         variant="contained" 
                         className={classes.button}>
                             Click to feed
                     </Button>
+                <footer><i>"Delivering and receiving feedback is a skill" - gapingvoid</i></footer>
             </div>
         )
     }

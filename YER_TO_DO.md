@@ -69,23 +69,24 @@ App will save the feedback in the database
 	[x] this.props.history.push to next view
 	[x] this.props.dispatch to redux
 
-[ ] Review
-	[ ] display user's answers on DOM
-		[ ] axios post 
-		[ ] table? or p tags
-	[ ] button, upon clicking will submit to database
-		[ ] post to database
-		[ ] will push to thank you page
+[x] Review
+	[x] display user's answers on DOM
+		[x] axios post 
+		[x] table? or p tags
+	[x] button, upon clicking will submit to database
+		[x] post to database
+		[x] will push to thank you page
 [x] Thank you
 	[x] button 
 	[x] this.props.history.push to view: homepage
 	[x] this.props.dispatch to redux to return [] to clear 
 
 ### STYLING: 
-
+	[ ] check boxes for ratings
+	
 
     
 ### STRETCH:
 	[x] material ui styling to buttons
 	[x] material ui styling for text field
-	[ ] 
+ 
