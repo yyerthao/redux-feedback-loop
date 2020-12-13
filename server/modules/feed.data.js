@@ -1,11 +1,8 @@
+// const express = require('express');
+// const router = express.Router();
+// const pool = require('./pool');
 
 
-const feedback = [
-    {   id: 0, 
-        feeling: 0, 
-        understanding: 0, 
-        support: 0, 
-        comments: '' },
-];
 
-module.exports = feedback;
+
+// module.exports = feedback;

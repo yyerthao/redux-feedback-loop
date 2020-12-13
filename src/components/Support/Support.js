@@ -36,8 +36,9 @@ class Support extends Component{
 
   // handleChange function to handle event of input fields incoming change
   handleChange = (event) => {
+    // this sets a new state 
       this.setState({
-          support: event.target.value
+        support: event.target.value
       })
   }
 

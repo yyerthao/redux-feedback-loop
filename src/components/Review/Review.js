@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import './Review.css';
-// import axios from 'axios';
+import axios from 'axios';
 
 const styles = theme => ({
     button: {
@@ -22,6 +22,15 @@ const styles = theme => ({
 
 class Review extends Component{
 
+state = {
+    collectedFeedback: {
+        feeling: this.props.feelingsReducer.feeling,
+        understanding: this.props.understandReducer.understanding,
+        support: this.props.supportReducer.support,
+        comments: this.props.commentsReducer.comments
+    }
+}
+
 // brings user to thank you view
 thankYou = (event) => {
     this.props.dispatch({type: 'NEW_FEEDBACK'})
@@ -29,37 +38,37 @@ thankYou = (event) => {
 
 }
 
-// handleSubmit = (event) => {
-//     event.preventDefault();
-//     console.log(`Adding book`, this.state.newBook);
-//     // TODO - axios request to server to add book
-//     axios.post('/feedback', this.state.newBook).then((response) => {
-//         console.log('back from POST:', response.data);
-//         this.setState = {
-//             newBook: {
-//                 title: '',
-//                 author: ''
-//             }
-//         }
-//         this.props.getBooks();
-//     }).catch((err) => {
-//         console.log(err);
-//     }) // end axios
-// } // end handleSubmit
+handleSubmit = (event) => {
+  event.preventDefault();
+  // TODO - axios request to server to add book
+    axios.post('/feedback', this.state.collectedFeedback)
+    .then((response) => {
+        console.log(' ---------------- POST WORKING', response)
+    }).catch((err) => {
+        console.log('POST NOT WORKING', err);
+        alert('POST did not work, try again.');
+    });
+    this.props.history.push('/thankyou');
+} // end handleSubmit 
 
     render(){
-        const classes = this.props;
+        const {feelingsReducer, understandReducer, supportReducer, commentsReducer} =this.props;
+        // const classes = this.props;
         return(
             <>
             <div>
                 <h1>Review Your Feedback</h1>
 
-                 <Button
-                    onClick={(event) => this.thankYou(event)} 
-                     variant="contained" 
-                     className={classes.button}>
+                <p>Feeling: {feelingsReducer.feeling}</p>
+                <p>Understanding: {understandReducer.understanding}</p>
+                <p>Support: {supportReducer.support}</p>
+                <p>Comments: {commentsReducer.comments}</p>
+                 <button
+                    onClick={(event) => this.handleSubmit(event)}>
+                    {/* //  variant="contained" 
+                    //  className={classes.button} */}
                         Next
-                </Button>
+                </button>
                 <br></br>
             </div>
             </>

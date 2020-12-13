@@ -31,7 +31,7 @@ state = {
   // handleChange function to handle event of input fields incoming change
   handleChange = (event) => {
       this.setState({
-          comments: event.target.value
+            comments: event.target.value
       })
   }
 

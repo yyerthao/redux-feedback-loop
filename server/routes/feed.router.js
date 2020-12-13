@@ -1,20 +1,27 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
-const feedback = require('../modules/feed.data.js');
 
+// GET feedback
+router.get('/', (req, res) => {
+    let queryText = 'SELECT feeling, understanding, support, comments FROM "feedback";';
+    pool.query(queryText).then((result) => {
+        res.send(result.rows);
+    }).catch((error) => {
+        console.log('Error GET /feedback', error)
+        res.sendStatus(500);
+    });
+})
 
 // POST feedback
 router.post('/', (req, res) => {
+    // store req.body into variable to utilize query
+    let newFeed = req.body;
     console.log(`Adding feedback`, newFeed);
-    const newFeed = req.body;
-    // add id to incoming feedback object
-    newFeed.id = nextId;
-    nextId += 1;
     let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments" )
     VALUES ($1, $2, $3, $4);`;
     pool.query(queryText, [newFeed.feeling, newFeed.understanding, newFeed.support, newFeed.comments])
-    .then(result => {
+    .then((results) => {
         res.sendStatus(201);
     })
     .catch(error => {
@@ -23,15 +30,5 @@ router.post('/', (req, res) => {
     });
 });
 
-// GET feedback
-router.get('/', (req, res) => {
-    console.log('GET /feedback');
-    pool.query('SELECT * from "feedback";').then((result) => {
-        res.send(result.rows);
-    }).catch((error) => {
-        console.log('Error GET /feedback', error)
-        res.sendStatus(500);
-    });
-})
 
 module.exports = router;

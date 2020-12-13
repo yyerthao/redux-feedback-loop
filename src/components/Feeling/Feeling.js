@@ -40,12 +40,12 @@ class Form extends Component{
   // handleChange function to handle event of input fields incoming change
   handleChange = (event) => {
       this.setState({
-          feeling: event.target.value
+            feeling: event.target.value
       })
   }
 
     render(){
-          const classes = this.props;
+          const {classes} = this.props;
         return(
             <>
             <h1>How goes the feeling today?</h1>

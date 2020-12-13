@@ -28,6 +28,12 @@ import logger from 'redux-logger';
 //     return state;
 // }
 
+const getFeedBackReducer = (state = [], action) => {
+    if(action.type === 'GET_FEEDBACK') {
+        return action.payload;
+    }
+    return state;
+}
 
 const feelingsReducer = (state = [], action) => {
     if(action.type === 'FEELINGS') {
@@ -68,6 +74,7 @@ const commentsReducer = (state = [], action) => {
 
 const storeInstance = createStore(
     combineReducers({
+        getFeedBackReducer,
         feelingsReducer,
         understandReducer,
         supportReducer,
