@@ -29,11 +29,11 @@ class Form extends Component{
     feeling: 0
  }
 
-// handleSubmit function to handle user's input and send it to redux
+// handleSubmit function to handle user's input values and send it to redux store
   handleSubmit = (event) => {
       event.preventDefault();
       console.log('Adding feeling', this.state.feeling);
-      this.props.dispatch({type: 'ADD_FEELINGS', payload: this.state})
+      this.props.dispatch({type: 'FEELINGS', payload: this.state})
       this.props.history.push('/understanding');
   }
 

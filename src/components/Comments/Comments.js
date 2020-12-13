@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import './Comments.css';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import axios from 'axios';
+// import axios from 'axios';
 
 const styles = theme => ({
     button: {
@@ -35,24 +35,26 @@ state = {
       })
   }
 
-componentDidMount(){
-    this.getFeed();
-}
+  
 
-getFeed = () => {
-    axios({
-        method: 'GET',
-        url: '/feedback'
-    }).then((response) => {
-        console.log('back from GET:', response.data);
-        this.setState({
-            feedBack: response.data
-        })
-    }).catch((err) => {
-        console.log(err);
-        alert('problem with GET request');
-    }) // end axios
-} // end getFeed
+// componentDidMount(){
+//     this.getFeed();
+// }
+
+// getFeed = () => {
+//     axios({
+//         method: 'GET',
+//         url: '/feedback'
+//     }).then((response) => {
+//         console.log('back from GET:', response.data);
+//         this.setState({
+//             feedBack: response.data
+//         })
+//     }).catch((err) => {
+//         console.log(err);
+//         alert('problem with GET request');
+//     }) // end axios
+// } // end getFeed
 
 //      addFeed = (event) => {
 //         event.preventDefault();

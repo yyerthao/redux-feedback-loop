@@ -41,8 +41,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Feed the feed!</h1>
-          <h4><i>Seriously, give us feedback...</i></h4>
-          <h4><i>Help us help you!</i></h4>
+          {/* <h2><i>Help us help you!</i></h2> */}
         </header>
         <div className="inner-div">
         <br></br>

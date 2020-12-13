@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import './Review.css';
+import axios from 'axios';
 
 const styles = theme => ({
     button: {
@@ -20,21 +22,29 @@ const styles = theme => ({
 
 class Review extends Component{
 
-  state = {
-      feedback: {
-          feels: '',
-          understanding: '',
-          support: '',
-          comments: ''
-      }
-  }
-
-
-returnHome = (event) => {
+// brings user to thank you view
+thankYou = (event) => {
     this.props.dispatch({type: 'NEW_FEEDBACK'})
-    this.props.history.push('/');
+    this.props.history.push('/thankyou');
 
 }
+
+  handleOnClick = () => {
+      console.log('ReduxState object: ', this.props.reduxState);
+      axios({
+              method: 'POST',
+              url: '/feedback',
+              data: this.props.reduxState,
+          })
+          .then((response) => {
+              console.log('response', response);
+              console.log('response.data', response.data);
+              this.props.history.push('/thankyou');
+          })
+          .catch((err) => {
+              console.error(err);
+          });
+  };
 
 
     render(){
@@ -43,8 +53,9 @@ returnHome = (event) => {
             <>
             <div>
                 <h1>Review Your Feedback</h1>
+
                  <Button
-                    onClick={(event) => this.returnHome(event)} 
+                    onClick={(event) => this.thankYou(event)} 
                     variant="contained" 
                     className={classes.button}>
                         Next
@@ -57,6 +68,7 @@ returnHome = (event) => {
 
 
 const putStateOnProps = (reduxState) => ({reduxState});
+
 export default connect(putStateOnProps)(withStyles(styles)(Review));
 
 

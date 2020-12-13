@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import './Home.css'
 
 const styles = theme => ({
     buttonThanks: {
@@ -23,14 +24,14 @@ startFeedBack = (event) => {
         const classes = this.props;
         return(
             <div>
-            <h3>delivery and receiving feedback, is a skill</h3>
-            <h4>@gapingvoid</h4>
-                <Button
-                    onClick={(event) => this.startFeedBack(event)} 
-                    variant="contained" 
-                    className={classes.button}>
-                        Feed the feed!
-                </Button>
+                <h1>It's your turn to feed the feedbackers</h1>
+                <footer><i>"Delivering and receiving feedback is a skill" - gapingvoid</i></footer>
+                    <Button
+                        onClick={(event) => this.startFeedBack(event)} 
+                        variant="contained" 
+                        className={classes.button}>
+                            Click to feed
+                    </Button>
             </div>
         )
     }

@@ -16,6 +16,7 @@ const styles = theme => ({
 
 class ThankYou extends Component{
   
+// brings user back to home
 returnHome = (event) => {
     this.props.dispatch({type: 'NEW_FEEDBACK'})
     this.props.history.push('/');
