@@ -5,6 +5,7 @@ h1{
 .mui-table, th, td{
     margin-left: 0;
     margin-right: 20rem;
+    margin-bottom: 2rem;
     border: 5px solid rgba(108, 159, 149, 0.461);
     background-color: rgb(240, 239, 239);
 

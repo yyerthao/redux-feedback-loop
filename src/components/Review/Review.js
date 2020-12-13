@@ -43,6 +43,11 @@ thankYou = (event) => {
 
 }
 
+restartFeedback = (event) => {
+    this.props.dispatch({type: 'NEW_FEEDBACK'})
+    this.props.history.push('/');
+}
+
 handleSubmit = (event) => {
   event.preventDefault();
   // TODO - axios request to server to add book
@@ -80,6 +85,15 @@ handleSubmit = (event) => {
                     </TableRow>
                 </TableBody>
                 </Table>
+                
+                 <Button
+                    onClick={(event) => this.restartFeedback(event)}
+                    variant="contained" 
+                    className={classes.button}>
+                        Restart Feedback
+                </Button>
+                &nbsp;
+                &nbsp;
                  <Button
                     onClick={(event) => this.handleSubmit(event)}
                     variant="contained" 

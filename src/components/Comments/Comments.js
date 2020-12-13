@@ -21,7 +21,7 @@ state = {
 }
 
 // handleSubmit function to handle user's input and send it to redux
-  returnHome = (event) => {
+  handleSubmit = (event) => {
       event.preventDefault();
       console.log('Adding comments', this.state.comments);
       this.props.dispatch({type: 'COMMENTS', payload: this.state})
@@ -35,9 +35,6 @@ state = {
       })
   }
 
-
-
-
     render(){
         const classes = this.props;
         return(
@@ -47,6 +44,7 @@ state = {
                 <br></br>
                 {/* added textarea instead of input in order to create a larger text box */}
                     <textarea 
+                        required
                         rows="5" 
                         cols="80" 
                         id="TITLE"
@@ -58,21 +56,15 @@ state = {
                     </textarea>
                     &nbsp;
                     <br></br>
-                <Button
-                    onClick={(event) => this.returnHome(event)} 
-                    variant="contained" 
-                    className={classes.button}>
-                        Start Over
-                </Button>
+                &nbsp;
                 &nbsp;
                 &nbsp;
                 <Button 
-                    onClick={(event) => this.returnHome(event)}
+                    onClick={(event) => this.handleSubmit(event)}
                     variant="contained"
                     className={classes.button}>
                         Complete Feed Back
                 </Button>
-                {/* <button onClick={(event) => this.handleSubmit(event)}>NEXT</button> */}
             </form>
             </>
         )

@@ -1,19 +1,24 @@
 html{
-  background-color: rgb(223, 228, 228);
+  background-color: rgb(244, 243, 235);
 }
 
 .App {
   text-align: center;
-  font-family: 'Architects Daughter', cursive;
-  background-color: rgb(223, 228, 228);
+  background-color: rgb(244, 243, 235);
   color: rgba(67, 60, 60, 0.845);
+  font-family: 'Nunito', sans-serif;
+
 }
 
 .App-header {
-  background-color: #3ba9abcb;
+  background-image: url('../App/teal.jpg');
+  background-repeat: no-repeat;
+  box-shadow: 4px 4px 4px grey;
+  background-size: cover;
   min-height: 50px;
-  padding: 8px;
+  padding: 10px;
   color: white;
+
 }
 
 .App-title {

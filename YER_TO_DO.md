@@ -2,20 +2,22 @@ Weekend Challenge:
 
 ### Overall: 
 Create a reflection/feedback form 
-Feedback will be collected over 4 pages
-Create separate review page
-Display current feedback values 
-Submit button
+Feedback will be collected across 4 pages
+Create separate review pages
+	[x] feeling
+	[x] understanding
+	[x] support
+	[x] comments
+	[x] review feedback
+	[x] thank you page
 App will save the feedback in the database
 
 ### REQUIRED:
 [x] Use Redux to store your data across views
-[ ] input validation
-	[ ] add alert box if no input was inputted?
-[ ] post all feedback results on view Results
+[x] input validation - radio buttons
+[x] post all feedback results on view Results
 [x] clear feedback upon Thank You page button: Add New Feedback
-[ ] 
-[ ]
+
 
 ### Set Up:
 [x] npm install
@@ -33,7 +35,7 @@ App will save the feedback in the database
 ### Views: 
 [x] Feels
 	[x] input forms
-	[ ] input validation
+	[x] input validation - radio buttons
 	[x] button 
 	[x] handle submit
 	[x] handle change
@@ -43,7 +45,7 @@ App will save the feedback in the database
  
 [x] Understanding 
 	[x] input forms
-	[ ] input validation	
+	[x] input validation - radio buttons
 	[x] button 
 	[x] handle submit
 	[x] handle change
@@ -53,7 +55,7 @@ App will save the feedback in the database
 
 [x] Support	
 	[x] input forms
-	[ ] input validation
+	[x] input validation - radio buttons
 	[x] button 
 	[x] handle submit
 	[x] handle change
@@ -82,8 +84,7 @@ App will save the feedback in the database
 	[x] this.props.dispatch to redux to return [] to clear 
 
 ### STYLING: 
-	[ ] check boxes for ratings
-	
+	[x] radio buttons for ratings
 
     
 ### STRETCH:

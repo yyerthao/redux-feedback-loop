@@ -56,43 +56,40 @@ class Understanding extends Component{
                     value={this.understanding} 
                     onChange={this.handleChange}>
                 </TextField> */}
-                <input type="radio" id="one" name="1" value="1"
+                <input type="radio" id="1" name="selection" value="1"
                     checked={this.state.understanding === "1"}
-                    onChange={this.handleChange}/>
-                <label htmlFor="one">One</label>
+                    onChange={this.handleChange}
+                    required="required"/>
+                <label htmlFor="1">One</label>
 
-                <input type="radio" id="2" name="2" value="2"
+                <input type="radio" id="2" name="selection" value="2"
                     checked={this.state.understanding === "2"}
                     onChange={this.handleChange}/>
                 <label htmlFor="2">Two</label>
 
-                <input type="radio" id="3" name="3" value="3"
+                <input type="radio" id="3" name="selection" value="3"
                     checked={this.state.understanding === "3"}
                     onChange={this.handleChange}/>
                 <label htmlFor="3">Three</label>
 
-                <input type="radio" id="4" name="4" value="4"
+                <input type="radio" id="4" name="selection" value="4"
                     checked={this.state.understanding === "4"}
                     onChange={this.handleChange}/>
                 <label htmlFor="4">Four</label>
 
-                <input type="radio" id="5" name="5" value="5"
+                <input type="radio" id="5" name="selection" value="5"
                     checked={this.state.understanding === "5"}
                     onChange={this.handleChange}/>
                 <label htmlFor="5">Five</label>
                 <br></br>
-
-                    &nbsp;
-                    <br></br>
+                <br></br>
                  <Button
-                    // onClick={(event) => this.handleSubmit(event)} 
                     type="submit"
                     value="submit"
                     variant="contained" 
                     className={classes.button}>
                         Next
                 </Button>
-                {/* <button onClick={(event) => this.handleSubmit(event)}>NEXT</button> */}
             </form>
             </>
         )

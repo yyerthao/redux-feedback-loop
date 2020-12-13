@@ -31,7 +31,8 @@ startFeedBack = (event) => {
                         className={classes.button}>
                             Click to feed
                     </Button>
-                <footer><i>"Delivering and receiving feedback is a skill" - gapingvoid</i></footer>
+                <footer><p><i>"Delivering and receiving feedback is a skill"</i></p> 
+                    <p><i> - quote from a photo from gapingvoid</i></p></footer>
             </div>
         )
     }

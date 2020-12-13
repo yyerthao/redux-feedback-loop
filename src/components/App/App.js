@@ -14,16 +14,6 @@ import { HashRouter as Router, Route} from 'react-router-dom';
 
 class App extends Component {
 
-state = {
-  feedback: {
-    feeling: 0,
-    understanding: 0,
-    support: 0,
-    comments: ''
-  }
-}
-
-
 componentDidMount(){
   this.getFeed();
 }
