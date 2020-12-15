@@ -24,7 +24,7 @@ startFeedBack = (event) => {
         const classes = this.props;
         return(
             <div>
-                <h1>It's your turn to feed the feedbackers</h1>
+                <h2>It's your turn to feed the feedbackers</h2>
                     <Button
                         onClick={(event) => this.startFeedBack(event)} 
                         variant="contained" 

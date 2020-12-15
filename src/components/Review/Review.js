@@ -22,6 +22,15 @@ const styles = theme => ({
         marginRight: theme.spacing(),
         width: 200,
     },
+  root: {
+          width: '100%',
+          marginTop: theme.spacing(),
+          overflowX: 'auto',
+      },
+      table: {
+          minWidth: 700,
+      },
+
 });
 
 
@@ -67,15 +76,15 @@ handleSubmit = (event) => {
         const { classes, feelingsReducer, understandReducer, supportReducer, commentsReducer} =this.props;
         return(
             <>
-            <div>
-                <h1>Review Your Feedback</h1>
+            <div className="review-div">
+                <h2>Review Your Feedback</h2>
                 <Table className="mui-table">
                 <TableHead>
                     <TableRow>
                         <TableCell>Feeling</TableCell>
                         <TableCell>Understanding</TableCell>
                         <TableCell>Support</TableCell>
-                        <TableCell>Comments</TableCell>
+                        {/* <TableCell>Comments</TableCell> */}
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -83,10 +92,14 @@ handleSubmit = (event) => {
                         <TableCell>{feelingsReducer.feeling}</TableCell>
                         <TableCell>{understandReducer.understanding}</TableCell>
                         <TableCell>{supportReducer.support}</TableCell>
-                        <TableCell>{commentsReducer.comments}</TableCell>
+                        {/* <TableCell>{commentsReducer.comments}</TableCell> */}
                     </TableRow>
                 </TableBody>
                 </Table>
+                <div className="comments-div">
+                    <h2>Comments:</h2>
+                    <p>{commentsReducer.comments}</p>
+                </div>
                 
                  <Button
                     onClick={(event) => this.restartFeedback(event)}
@@ -119,5 +132,7 @@ const putStateOnProps = (reduxState) => ({
     commentsReducer: reduxState.commentsReducer,
 });
 
+// connect with method puts redux onto props
+// connect(putStateOnProps) 
 export default connect(putStateOnProps)(withStyles(styles)(Review));
 

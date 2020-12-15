@@ -44,7 +44,7 @@ class Understanding extends Component{
         const classes = this.props;
         return(
             <>
-            <h1>How well did you understand today's material?</h1>
+            <h2>How well did you understand today's material?</h2>
             <p><i>On a scale of 1 to 5, 1 being not good and 5 being great.</i></p>
             <form onSubmit={this.handleSubmit}>
                 {/* <TextField 

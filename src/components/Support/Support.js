@@ -45,7 +45,7 @@ class Support extends Component{
           const classes = this.props;
         return(
             <>
-            <h1>Did you feel supported today?</h1>
+            <h2>Did you feel supported today?</h2>
             <p><i>On a scale of 1 to 5, 1 being not good and 5 being great.</i></p>
             <form onSubmit={this.handleSubmit}>
                 <input type="radio" id="1" name="selection" value="1"

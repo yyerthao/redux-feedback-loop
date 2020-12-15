@@ -49,7 +49,7 @@ class Form extends Component{
           const {classes} = this.props;
         return(
             <>
-            <h1>How goes the feels today?</h1>
+            <h2>How goes the feels today?</h2>
             <p><i>On a scale of 1 to 5, 1 being not good and 5 being great,
                 tell us how you're feeling.</i></p>
             <form onSubmit={this.handleSubmit}>
@@ -97,3 +97,7 @@ class Form extends Component{
 
 const putStateOnProps = (reduxState) => ({reduxState});
 export default connect(putStateOnProps)(withStyles(styles)(Form));
+
+// not displaying anything from redux so OK to just do connect() no method
+// whenever you do a dispatch, all reducers will get run through 
+// any information you want to send to your reducer, you can put it into your payload, not just from server

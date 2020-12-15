@@ -6,12 +6,27 @@ h1{
     margin-left: 0;
     margin-right: 20rem;
     margin-bottom: 2rem;
-    border: 5px solid rgba(108, 159, 149, 0.461);
+    border: 1px solid rgba(112, 118, 116, 0.79);
     background-color: rgb(240, 239, 239);
-
 }
 
 th{
-    background-color: rgba(130, 210, 211, 0.557);
+    background-color: rgba(153, 201, 201, 0.557);
 }
 
+
+
+.review-div{
+    margin-right:5rem;
+    margin-left: 10rem;
+}
+
+td{
+    word-break: break-all;
+}
+
+.comments-div{
+    margin-right: 2rem;
+    margin-left: 2rem;
+    word-break: break-all;
+}
