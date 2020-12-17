@@ -20,7 +20,7 @@ const styles = theme => ({
     textField: {
         marginLeft: theme.spacing(),
         marginRight: theme.spacing(),
-        width: 200,
+        width: 150,
     },
   root: {
           width: '100%',

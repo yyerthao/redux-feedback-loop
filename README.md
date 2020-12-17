@@ -53,7 +53,7 @@ Review view
 7. Review feedback, user has option to start over at this point
     or user may submit feedback 
 
-s
+
 ## Built With
 
 * HTML5
