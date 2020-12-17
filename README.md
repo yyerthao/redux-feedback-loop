@@ -18,8 +18,7 @@ Feelings view
 ![Feedback](feels.png)
 Comment view
 ![Feedback](comment.png)
-Review view
-![Feedback](review.png)
+
 
 ### Prerequisites
 

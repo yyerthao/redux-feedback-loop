@@ -28,41 +28,41 @@ import logger from 'redux-logger';
 //     return state;
 // }
 
-const getFeedBackReducer = (state = [], action) => {
+const getFeedBackReducer = (state = {}, action) => {
     if(action.type === 'GET_FEEDBACK') {
         return action.payload;
     }
     return state;
 }
 
-const feelingsReducer = (state = [], action) => {
+const feelingsReducer = (state = {}, action) => {
     if(action.type === 'FEELINGS') {
         return action.payload;
     } else if (action.type === 'NEW_FEEDBACK'){
-        return [];
+        return {};
     }
     return state;
 }
 
-const understandReducer = (state = [], action) => {
+const understandReducer = (state = {}, action) => {
     if(action.type === 'UNDERSTANDING') {
         return action.payload;
     } else if (action.type === 'NEW_FEEDBACK'){
-        return [];
+        return {};
     }
     return state;
 }
 
-const supportReducer = (state = [], action) => {
+const supportReducer = (state = {}, action) => {
     if(action.type === 'SUPPORT') {
         return action.payload;
     } else if (action.type === 'NEW_FEEDBACK'){
-        return [];
+        return {};
     }
     return state;
 }
 
-const commentsReducer = (state = [], action) => {
+const commentsReducer = (state = {}, action) => {
     if(action.type === 'COMMENTS') {
         return action.payload;
     } else if (action.type === 'NEW_FEEDBACK'){
